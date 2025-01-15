@@ -53,10 +53,10 @@ const DropdownMenu = () => {
   }, [isOpen]);
 
   return (
-    <div className=" mt-16 relative dropdown-container inline-block text-left">
+    <div className=" relative dropdown-container inline-block text-left">
       <button
         onClick={toggleDropdown}
-        className="inline-flex justify-center w-full rounded-md px-4 py-2 bg-transparent text-sm font-medium  text-white"
+        className=" pt-16 inline-flex justify-center w-full rounded-md px-4 py-2 bg-transparent text-sm font-medium  text-white"
       >
         <img className='w-7' src={user.photoURL} alt='user-icon'></img>
 
@@ -79,11 +79,11 @@ const DropdownMenu = () => {
       {/* Dropdown menu */}
       {isOpen && (
         <div
-          className="absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+          className="absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white "
         >
           <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
             <button className="flex justify-normal px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left" role="menuitem">
-            <img className='w-8' src={user.photoURL} alt='user-icon'></img> <span className='p-2'> My Profile</span>
+            <img className='w-8' src={user.photoURL} alt='user-icon'></img> <span className='p-2'> {user.displayName} </span>
             </button>
             <button className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left" role="menuitem">
               Manage Profile

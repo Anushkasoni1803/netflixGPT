@@ -13,8 +13,6 @@ const Login = () => {
     const [errormsg,seterrormsg] = useState(null);
     const dispatch = useDispatch();
 
-
-
     const toggleSignIn =()=>{
         setIsSignIn(!isSignIn);
         clearForm();
