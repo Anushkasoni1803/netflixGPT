@@ -1,12 +1,21 @@
 import React from 'react'
+import { useNavigate, useParams } from 'react-router-dom';
 
 const VideoTitle = ({title, overview}) => {
+
+  const { id } = useParams(); // Extract `id` from the URL
+  const navigate = useNavigate();
+  const playMovie = () => {
+    console.log("play movie", id);
+    navigate(`/browse/MyMovie/${id}`);
+  };
+
   return (
     <div className='px-6 pt-[400px] absolute text-white w-screen h-screen aspect-video bg-gradient-to-r from-black'>
       <h1 className='font-bold text-6xl' >{title}</h1>
       <p className='w-[700px] py-10'>{overview}</p>
       <div className='flex'>
-        <button className='bg-white flex pe-11 ps-6 py-3 border font-bold text-black border-black p-3 rounded-2xl hover:bg-opacity-70'> 
+        <button onClick={playMovie} className='bg-white flex pe-11 ps-6 py-3 border font-bold text-black border-black p-3 rounded-2xl hover:bg-opacity-70'> 
         <svg className='px-2' xmlns="http://www.w3.org/2000/svg" width="40"  viewBox="0 0 100 100">
         <polygon points="30,20 80,50 30,80" fill="black" />
        </svg>

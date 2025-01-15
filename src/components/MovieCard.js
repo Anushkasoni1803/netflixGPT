@@ -1,19 +1,18 @@
 
-
-
 import React from "react";
 import { IMG_CDN_URL } from "../utils.js/constants";
 import { useNavigate } from "react-router-dom";
-import usePlayMovie from "../hook/usePlayMovie";
 const MovieCard = ({ posterpath, title, release_date, vote_average ,id }) => {
 
     const navigate = useNavigate();
-    const playit = () => {
-        navigate('/browse/play')        
-    }
-    usePlayMovie(id)
+    const playMovie = () => {
+      console.log("play movie", id);
+      // fetch movie trailer and play it
+    //    navigate('/browse/MyMovie', { movieId: id });
+    navigate(`/browse/MyMovie/${id}`);
 
 
+    };
 
   return (
     <div className="relative w-60 p-5 group cursor-pointer ">
@@ -33,7 +32,7 @@ const MovieCard = ({ posterpath, title, release_date, vote_average ,id }) => {
         </div>
 
         <div className="flex items-center justify-center">
-          <button onClick={playit} className="flex items-center  bg-white font-bold text-black pe-3 rounded-lg ps-1 py-1  hover:bg-gray-200">
+          <button onClick={playMovie} className="flex items-center  bg-white font-bold text-black pe-3 rounded-lg ps-1 py-1  hover:bg-gray-200">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="40"
