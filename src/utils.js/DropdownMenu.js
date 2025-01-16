@@ -1,9 +1,7 @@
-// Import React and useState for managing dropdown state
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { auth } from './firebase';
 import {  signOut } from "firebase/auth";
-// import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 
@@ -54,19 +52,20 @@ const DropdownMenu = () => {
 
   return (
     <div className=" relative dropdown-container inline-block text-left">
+      
       <button
         onClick={toggleDropdown}
         className=" pt-16 inline-flex justify-center w-full rounded-md px-4 py-2 bg-transparent text-sm font-medium  text-white"
       >
         <img className='w-7' src={user.photoURL} alt='user-icon'></img>
 
-        <span className="ms-3 mt-0 font-bold text-lg"> {user.displayName} </span>
+        <span className="ms-5 mt-0 font-bold text-lg"> {user.displayName} </span>
+
         <svg
           className="mt-1 font-bold ml-2 h-5 w-5"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
-          fill="currentColor"
-          aria-hidden="true"
+          fill="white"
         >
           <path
             fillRule="evenodd"

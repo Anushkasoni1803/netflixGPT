@@ -35,6 +35,7 @@ const Header = () => {
             src={NetflixURL} 
             alt='logo' ></img>
         <div className='flex '>
+        
         {newuser && <DropdownMenu />}
         </div>
 

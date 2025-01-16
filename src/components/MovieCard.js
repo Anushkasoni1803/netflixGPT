@@ -6,13 +6,10 @@ const MovieCard = ({ posterpath, title, release_date, vote_average ,id }) => {
 
     const navigate = useNavigate();
     const playMovie = () => {
-      console.log("play movie", id);
-      // fetch movie trailer and play it
     //    navigate('/browse/MyMovie', { movieId: id });
     navigate(`/browse/MyMovie/${id}`);
-
-
     };
+
 
   return (
     <div className="relative w-60 p-5 group cursor-pointer ">
@@ -28,7 +25,7 @@ const MovieCard = ({ posterpath, title, release_date, vote_average ,id }) => {
         <h3 className=" text-white font-bold text-lg ">{title}</h3>
 
         {release_date? <p className=" font-bold text-sm text-white"> Release Date: {release_date} </p> : null }
-        { vote_average? <p className=" mb-2 text-sm font-bold text-white">Rating: {id} {vote_average}</p> : null }
+        { vote_average? <p className=" mb-2 text-sm font-bold text-white">Rating: {id}  {vote_average}</p> : null }
         </div>
 
         <div className="flex items-center justify-center">

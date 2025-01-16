@@ -12,7 +12,10 @@ import usePopularTv from '../hook/usePopularTv';
 import useUpcomingMovies from '../hook/useUpcomingMovies';
 
 
+
 const Browse = () => {
+
+
 
   useNowPlayingMovies();
   usePopularMovies();
@@ -25,12 +28,13 @@ const Browse = () => {
 
   return (
     <div className=' overflow-hidden ' >
+      
       <Header/>
       <MainContainer/>
-      <div className=' bg-black'>
-      <SecondaryContainer/>
-
+      <div className='bg-black'>
+        <SecondaryContainer/>
       </div>
+      
     </div>
     
   )

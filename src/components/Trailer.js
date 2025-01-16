@@ -1,14 +1,15 @@
 import React from 'react'
 import {  useSelector } from 'react-redux'
-import useMovieTrailer from '../hook/useMovieTrailer'
+// import useMovieTrailer from '../hook/useMovieTrailer'
+import usePlayTrailer from '../hook/usePlayTrailer'
 
 const Trailer = ({movieId}) => {
   const trailerVideo = useSelector((store)=> store.movies?.trailerVideo)
 
-  useMovieTrailer(movieId);
+  usePlayTrailer(movieId);
 
   return (
-    <div className="w-screen h-screen">
+    <div className="w-screen h-screen overflow-hidden -mt-2">
       <iframe
         className="w-screen aspect-video "
         src={
